@@ -1,0 +1,2113 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --bg: #eff6cc;
+    --header: #bfd69d;
+    --green: #9bcd5b;
+    --green-dark: #5b8d2b;
+    --dark: #30452b;
+    --yellow: #f5df2f;
+    --white: #ffffff;
+    --muted: #b8c0ad;
+    --shadow: 5px 7px 9px rgba(45, 55, 30, 0.28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.app {
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--bg);
+    padding-bottom: 100px;
+}
+
+/* HEADER */
+
+.top-header {
+    background: var(--header);
+    border-top: 3px solid #a4b987;
+    border-bottom: 3px solid #a4b987;
+    padding: 20px 25px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.brand-title {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 1.5px var(--dark);
+    text-shadow: 2px 3px var(--dark);
+    margin-bottom: 10px;
+}
+
+.header-greeting h2 {
+    font-size: clamp(23px, 4.5vw, 38px);
+    font-weight: 900;
+}
+
+.header-greeting p {
+    font-size: clamp(14px, 3vw, 23px);
+}
+
+.shield-logo {
+    position: relative;
+    width: 120px;
+    height: 130px;
+    flex-shrink: 0;
+    border: 7px solid #6e9b3f;
+    border-radius: 45% 45% 48% 48%;
+    clip-path: polygon(50% 0, 100% 20%, 92% 75%, 50% 100%, 8% 75%, 0 20%);
+    background: #dce9b6;
+    display: grid;
+    place-items: center;
+}
+
+.shield-symbol {
+    color: var(--yellow);
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.shield-leaf {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    font-size: 25px;
+}
+
+/* PAGES */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* DASHBOARD */
+
+.dashboard-section {
+    padding: 30px 25px 20px;
+}
+
+.dashboard-slider {
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.dashboard-track {
+    display: flex;
+    transition: transform 0.35s ease;
+}
+
+.dashboard-slide {
+    min-width: 100%;
+    flex: 0 0 100%;
+}
+
+.dashboard-panel {
+    height: 330px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.78);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    box-shadow: 0 3px 12px rgba(60, 80, 40, 0.05);
+}
+
+.dashboard-panel h3 {
+    text-align: center;
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.screen-time-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.screen-time-ring {
+    width: clamp(100px, 18vw, 150px);
+    height: clamp(100px, 18vw, 150px);
+    border-radius: 50%;
+    border: 14px solid #7f9e6b;
+    border-right-color: #c9d8bd;
+    transform: rotate(-30deg);
+    display: grid;
+    place-items: center;
+}
+
+.ring-inner {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.screen-time-number strong {
+    font-size: clamp(35px, 8vw, 70px);
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* SLIDER DOTS */
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #c8d2b6;
+}
+
+.slider-dot.active {
+    width: 45px;
+    border-radius: 20px;
+    background: #7e9d67;
+}
+
+/* APP USAGE CHART */
+
+.app-usage-chart {
+    display: flex;
+    height: 220px;
+    gap: 12px;
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 25px;
+}
+
+.chart-bars {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 10px;
+    border-bottom: 2px solid #d7e2c6;
+}
+
+.usage-bar-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.usage-bar {
+    width: 55%;
+    min-height: 4px;
+    background: #7d9d63;
+    border-radius: 0;
+}
+
+.usage-app-icon {
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+/* MOOD CHART */
+
+.mood-chart-wrapper {
+    height: 220px;
+    display: flex;
+    gap: 10px;
+}
+
+.mood-levels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 21px;
+}
+
+.mood-chart {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    border-bottom: 2px solid #d7e2c6;
+}
+
+.mood-chart svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.mood-month-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* FEATURE AREA */
+
+.feature-area {
+    background: #c3dba2;
+    border: 3px solid #a5bf83;
+    border-radius: 35px 35px 0 0;
+    padding: 35px 25px 25px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.feature-button {
+    min-height: 180px;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+    font-size: clamp(15px, 3vw, 25px);
+    font-weight: 900;
+    text-shadow: 2px 2px var(--dark);
+    -webkit-text-stroke: 0.3px var(--dark);
+    transition: transform 0.2s;
+}
+
+.feature-button:active {
+    transform: scale(0.97);
+}
+
+.feature-image {
+    font-size: clamp(40px, 8vw, 70px);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+}
+
+.feature-button.morning {
+    background: #9bcd5b;
+}
+
+.feature-button.mind {
+    background: #638e2b;
+}
+
+.feature-button.soul {
+    background: #30452b;
+}
+
+.feature-button.social {
+    background: #f5df2f;
+    color: white;
+}
+
+/* LOCKED APPS */
+
+.locked-apps {
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 15px 20px;
+    border-radius: 30px;
+    background: var(--bg);
+    text-align: center;
+}
+
+.locked-apps h3 {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.locked-app-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.locked-app-icon {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.locked-app-icon::after {
+    content: "🔒";
+    position: absolute;
+    right: -5px;
+    top: -8px;
+    font-size: 14px;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f8b33a, #d33b92, #6652c9);
+}
+
+.youtube {
+    background: #ff0000;
+}
+
+.tiktok {
+    background: #000000;
+}
+
+.x-logo {
+    background: #000000;
+}
+
+.telegram {
+    background: #269bd6;
+}
+
+.empty-apps {
+    font-size: 12px;
+    color: #7d8c6b;
+}
+
+/* MORNINGBREAK HEADER */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    background: var(--header);
+    border-top: 3px solid #a4b987;
+    border-bottom: 3px solid #a4b987;
+}
+
+.page-header h1 {
+    font-size: clamp(25px, 5vw, 45px);
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 1.5px var(--dark);
+    text-shadow: 2px 3px var(--dark);
+}
+
+.page-header p {
+    font-size: clamp(13px, 2.5vw, 22px);
+    font-weight: 800;
+}
+
+.page-header-icon {
+    font-size: 45px;
+}
+
+.header-shield {
+    margin-left: auto;
+    width: 65px;
+    height: 75px;
+    border: 4px solid #6e9b3f;
+    border-radius: 40% 40% 45% 45%;
+    display: grid;
+    place-items: center;
+    color: var(--yellow);
+    font-size: 30px;
+    font-weight: 900;
+    background: #dce9b6;
+}
+
+/* MORNING HISTORY */
+
+.morning-history {
+    padding: 35px 25px;
+}
+
+.morning-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.morning-date-button {
+    width: 100%;
+    padding: 20px 15px;
+    border-radius: 20px;
+    background: var(--green);
+    color: var(--dark);
+    font-size: clamp(17px, 4vw, 32px);
+    font-weight: 900;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.morning-date-button:active {
+    transform: scale(0.98);
+}
+
+.morning-date-button.not-completed {
+    opacity: 0.7;
+}
+
+.morning-empty {
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* MORNING DETAIL */
+
+.morning-detail-content {
+    padding: 30px 25px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section-title {
+    background: var(--green);
+    padding: 18px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 0.5px var(--dark);
+    text-shadow: 1px 2px var(--dark);
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 2;
+}
+
+.detail-result {
+    min-height: 150px;
+    padding: 25px;
+    margin-top: 12px;
+    background: var(--yellow);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.detail-answer-result {
+    min-height: 300px;
+    padding: 25px;
+    margin-top: -3px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.detail-question-item,
+.detail-answer-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e8dc;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.detail-question-item:last-child,
+.detail-answer-item:last-child {
+    border-bottom: none;
+}
+
+.detail-question-item strong,
+.detail-answer-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detail-answer-item {
+    color: #536747;
+}
+
+.detail-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.round-arrow {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--bg);
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* OTHER CHALLENGES */
+
+.simple-page-header {
+    padding: 25px;
+}
+
+.simple-page-header h2 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.simple-page-header p {
+    font-size: 14px;
+}
+
+.back-button {
+    display: block;
+    background: transparent;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.challenge-card {
+    background: white;
+    padding: 25px;
+    margin: 0 25px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.challenge-progress {
+    margin-bottom: 25px;
+}
+
+.challenge-progress span {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    height: 8px;
+    background: #e6edd8;
+    border-radius: 20px;
+}
+
+.progress-track div {
+    width: 0;
+    height: 100%;
+    background: var(--green);
+    border-radius: 20px;
+}
+
+.challenge-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.challenge-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.challenge-option {
+    padding: 15px;
+    border: 2px solid #e1e9d5;
+    border-radius: 15px;
+    background: white;
+    text-align: left;
+    font-size: 14px;
+}
+
+.challenge-option.selected {
+    border-color: var(--green-dark);
+    background: #eff6dd;
+}
+
+.main-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--green-dark);
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+/* SETTINGS */
+
+.settings-page-header {
+    gap: 15px;
+}
+
+.settings-page-header .page-header-icon {
+    font-size: 55px;
+    color: #000;
+}
+
+.settings-content {
+    margin: 30px 25px;
+    padding: 25px;
+    border-radius: 20px;
+    background: var(--green);
+    box-shadow: var(--shadow);
+}
+
+.settings-section-title {
+    text-align: center;
+    background: var(--bg);
+    font-size: clamp(19px, 4vw, 32px);
+    font-weight: 900;
+    margin: -10px -25px 0;
+    padding: 8px 5px;
+}
+
+.daily-limit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.daily-limit-row label {
+    font-size: clamp(15px, 3.5vw, 25px);
+}
+
+.daily-limit-row select {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.app-lock-title {
+    margin-top: 0;
+}
+
+.app-lock-list {
+    padding: 15px;
+}
+
+.app-lock-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 65px;
+    cursor: pointer;
+}
+
+.app-logo {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.app-lock-name {
+    display: none;
+}
+
+.app-lock-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--dark);
+    margin-left: auto;
+}
+
+.custom-arrow {
+    color: var(--yellow);
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.setting-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border-radius: 25px;
+    padding: 12px 18px;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.setting-option strong {
+    font-size: clamp(14px, 3vw, 23px);
+    font-weight: 900;
+}
+
+.setting-option > span {
+    font-size: 15px;
+}
+
+#themeToggle {
+    width: 150px;
+    border-radius: 30px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+
+.settings-note {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* PROFILE */
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--yellow);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 25px;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.settings-content label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin: 15px 0 8px;
+}
+
+.settings-content input[type="text"],
+.settings-content input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5e0c5;
+    border-radius: 10px;
+    background: var(--bg);
+}
+
+.feedback {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(900px, 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 10px 15px;
+    background: var(--bg);
+    border-radius: 30px 30px 0 0;
+    z-index: 100;
+}
+
+.nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: transparent;
+    color: var(--dark);
+    font-size: 12px;
+}
+
+.nav-icon {
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.nav-button.active {
+    color: #5c7843;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    --bg: #20291c;
+    --header: #3c5130;
+    --green: #6f9f3e;
+    --green-dark: #4b702b;
+    --dark: #e5f1d3;
+    --yellow: #cbbd2c;
+    --white: #263020;
+    --muted: #aab79a;
+}
+
+body.dark-mode .dashboard-panel,
+body.dark-mode .challenge-card,
+body.dark-mode .detail-answer-result {
+    background: #2b3626;
+    color: var(--dark);
+}
+
+body.dark-mode .challenge-option {
+    background: #2b3626;
+    color: var(--dark);
+}
+
+body.dark-mode .detail-answer-item {
+    color: #c8ddb2;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 550px) {
+    .dashboard-section {
+        padding: 25px 18px 15px;
+    }
+
+    .dashboard-panel {
+        height: 300px;
+        padding: 18px;
+    }
+
+    .feature-area {
+        padding: 30px 18px 25px;
+    }
+
+    .feature-grid {
+        gap: 18px;
+    }
+
+    .feature-button {
+        min-height: 150px;
+    }
+
+    .morning-history {
+        padding: 30px 18px;
+    }
+
+    .morning-date-button {
+        padding: 18px 10px;
+    }
+
+    .morning-detail-content {
+        padding: 25px 18px;
+    }
+
+    .settings-content {
+        margin: 25px 18px;
+        padding: 20px;
+    }
+
+    .settings-section-title {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .challenge-card {
+        margin: 0 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .screen-time-content {
+        gap: 12px;
+    }
+
+    .screen-time-number strong {
+        font-size: 35px;
+    }
+
+    .screen-time-ring {
+        width: 90px;
+        height: 90px;
+        border-width: 10px;
+    }
+
+    .feature-button {
+        min-height: 125px;
+        font-size: 14px;
+    }
+
+    .feature-image {
+        font-size: 38px;
+    }
+
+    .app-logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+/* LABEL DURASI DI ATAS BATANG GRAFIK */
+.usage-duration {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #34472d;
+    white-space: nowrap;
+    text-align: center;
+    margin-bottom: 7px;
+    line-height: 1.2;
+}
+
+/* ITEM GRAFIK */
+.usage-bar-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* BATANG GRAFIK */
+.usage-bar {
+    width: 55%;
+    min-height: 4px;
+    background: #7d9d63;
+    border-radius: 0;
+    transition: height 0.3s ease;
+}
+
+/* IKON APLIKASI */
+.usage-app-icon {
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 420px) {
+    .usage-duration {
+        font-size: 10px;
+    }
+
+    .usage-app-icon {
+        font-size: 18px;
+    }
+}
+/* ======================================
+   RIWAYAT RESPONS DOOMBREAK
+====================================== */
+
+.history-page-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-page-heading span {
+    font-size: 28px;
+}
+
+/* ======================================
+   FEATURE HISTORY - DOOMBREAK
+====================================== */
+
+/* Daftar tanggal aktivitas */
+.feature-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 35px 25px;
+}
+
+/* Tombol tanggal */
+.feature-history-list .morning-date-button {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 22px;
+
+    background: var(--green);
+    color: var(--dark);
+
+    font-size: clamp(18px, 4vw, 32px);
+    font-weight: 900;
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+/* Hilangkan tanda panah pada tombol tanggal */
+.feature-history-list .history-arrow {
+    display: none;
+}
+
+/* Halaman detail */
+.feature-history-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 35px 25px 110px;
+}
+
+/* Kartu pertanyaan dan jawaban */
+.feature-history-detail .history-qa-card {
+    background: transparent;
+    border: none;
+    border-radius: 22px;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Bagian pertanyaan */
+.feature-history-detail .history-question {
+    min-height: 100px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--green);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+/* Hilangkan nomor */
+.feature-history-detail .history-number {
+    display: none;
+}
+
+/* Hilangkan label kecil */
+.feature-history-detail .history-question small {
+    display: none;
+}
+
+/* Tulisan Pertanyaan */
+.feature-history-detail .history-question strong {
+    color: white;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+    text-shadow: 2px 2px var(--dark);
+}
+
+/* Area jawaban */
+.feature-history-detail .history-answer {
+    min-height: 180px;
+    margin: 15px 0 0;
+    padding: 25px;
+
+    background: white;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+/* Tulisan Hasil Rekapan */
+.feature-history-detail .history-answer small {
+    display: block;
+    color: #c5c9c0;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+}
+
+/* Isi jawaban */
+.feature-history-detail .history-answer p {
+    margin: 10px 0 0;
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Tampilan kosong */
+.feature-history-list .history-empty,
+.feature-history-detail .history-empty {
+    padding: 25px;
+    background: transparent;
+    color: var(--dark);
+    text-align: center;
+    font-weight: 800;
+}
+
+/* Tampilan HP */
+@media (max-width: 550px) {
+    .feature-history-list {
+        padding: 30px 18px;
+        gap: 22px;
+    }
+
+    .feature-history-list .morning-date-button {
+        min-height: 85px;
+        font-size: 20px;
+    }
+
+    .feature-history-detail {
+        padding: 30px 18px 110px;
+    }
+
+    .feature-history-detail .history-answer {
+        min-height: 250px;
+    }
+}
+
+/* Dark mode */
+.dark-mode .history-qa-card {
+    background: #252d20;
+    border-color: rgba(190, 220, 150, 0.14);
+}
+
+.dark-mode .history-question strong {
+    color: #e8f1df;
+}
+
+.dark-mode .history-answer {
+    background: #34432a;
+}
+
+.dark-mode .history-answer p {
+    color: #e2f2ce;
+}
+
+.dark-mode .history-number {
+    background: #455b34;
+    color: #e2f2ce;
+}
+/* ==========================================
+   DOOMBREAK - RESPONSIVE MOBILE
+   ========================================== */
+
+/* Mencegah halaman melebar keluar layar */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Gambar dan media menyesuaikan layar */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+/* ==========================================
+   TABLET DAN HP
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    /* Semua halaman menggunakan lebar layar */
+    .page,
+    main {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Kontainer utama */
+    .container,
+    .main-container,
+    .content,
+    .dashboard-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Header */
+    header,
+    .header,
+    .navbar,
+    .topbar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Judul */
+    h1 {
+        font-size: clamp(22px, 6vw, 30px);
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: clamp(19px, 5vw, 25px);
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: clamp(16px, 4.5vw, 20px);
+        line-height: 1.35;
+    }
+
+    /* Kartu dashboard */
+    .card,
+    .dashboard-card,
+    .feature-card,
+    .stat-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Grid kartu menjadi satu kolom */
+    .dashboard-grid,
+    .feature-grid,
+    .stats-grid {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        gap: 14px;
+    }
+
+    /* Carousel tetap bisa digeser secara horizontal */
+    .carousel,
+    .dashboard-carousel,
+    .horizontal-scroll {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Grafik */
+    .chart-container,
+    .usage-chart-container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    canvas {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Tombol */
+    button,
+    .button {
+        max-width: 100%;
+        min-height: 42px;
+        font-size: 14px;
+    }
+
+    /* Halaman arsip */
+    .simple-page-header {
+        width: 100%;
+        padding: 18px 16px;
+    }
+
+    .feature-history-list,
+    .feature-history-detail {
+        width: 100%;
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .morning-date-button {
+        width: 100%;
+        min-height: 52px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: left;
+    }
+
+    .history-qa-card {
+        width: 100%;
+        min-width: 0;
+        padding: 14px;
+    }
+
+    .history-question strong,
+    .history-answer p {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .history-answer {
+        margin-left: 0;
+    }
+
+    /* Form input */
+    input,
+    textarea,
+    select {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    /* Bagian profil */
+    .profile-card,
+    .profile-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================
+   HP KECIL
+   ========================================== */
+
+@media screen and (max-width: 480px) {
+
+    .container,
+    .main-container,
+    .content,
+    .dashboard-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .simple-page-header {
+        padding: 16px 12px;
+    }
+
+    .feature-history-list,
+    .feature-history-detail {
+        padding: 12px;
+    }
+
+    .history-qa-card {
+        padding: 12px;
+    }
+
+    .history-number {
+        flex: 0 0 26px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .history-question {
+        gap: 9px;
+    }
+
+    .history-question strong {
+        font-size: 13px;
+    }
+
+    .history-answer p {
+        font-size: 13px;
+    }
+}
+/* =====================================
+   FITUR DOOMBREAK - UKURAN HP
+===================================== */
+
+@media screen and (max-width: 480px) {
+
+    .feature-area {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .feature-grid {
+        display: grid;
+
+        /* Dua kolom dengan lebar seimbang */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .feature-button {
+        width: 100%;
+        height: 88px;
+        min-height: 88px;
+
+        padding: 8px 5px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+
+        border-radius: 16px;
+        box-sizing: border-box;
+
+        font-size: 12px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .feature-image {
+        font-size: 24px;
+        line-height: 1;
+        margin: 0;
+    }
+}
+/* =====================================
+   DASHBOARD SLIDER - UKURAN SAMA DI HP
+===================================== */
+
+@media screen and (max-width: 480px) {
+
+    .dashboard-section {
+        width: 100%;
+        min-width: 0;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .dashboard-slider {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+    }
+
+    .dashboard-track {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .dashboard-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .dashboard-panel {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 20px 16px;
+        border-radius: 28px;
+    }
+
+    .dashboard-panel h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Slide waktu layar */
+    .screen-time-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .screen-time-number strong {
+        font-size: 29px;
+    }
+
+    /* Slide durasi penggunaan */
+    .app-usage-chart {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+    }
+
+    /* Slide mood tracker */
+    .mood-chart-wrapper {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+    }
+}
+/* =====================================
+   DOOMBREAK MOBILE LAYOUT
+===================================== */
+
+@media screen and (max-width: 480px) {
+
+    /* HEADER: turunkan sedikit posisinya */
+    .dashboard-header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    /* SLIDER: kecilkan ukuran keseluruhan */
+    .dashboard-section {
+        padding-top: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .dashboard-slider {
+        height: 260px;
+    }
+
+    .dashboard-track {
+        height: 100%;
+    }
+
+    .dashboard-slide {
+        height: 100%;
+    }
+
+    .dashboard-panel {
+        height: 100%;
+        padding: 18px 14px;
+        border-radius: 26px;
+    }
+
+    /* Judul slider */
+    .dashboard-panel h3 {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    /* Lingkaran waktu layar */
+    .screen-time-ring {
+        width: 76px;
+        height: 76px;
+    }
+
+    /* Angka waktu layar */
+    .screen-time-number strong {
+        font-size: 28px;
+    }
+
+    /* Jarak indikator slider */
+    .slider-dots {
+        margin-top: 12px;
+    }
+}
+/* =====================================
+   DOOMBREAK LOGIN & REGISTER
+===================================== */
+
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px 16px;
+
+    background: #f3fadc;
+    box-sizing: border-box;
+}
+
+.auth-page.active {
+    display: flex;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+}
+
+.auth-logo {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.auth-logo h1 {
+    color: #30452c;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.auth-logo p {
+    color: #5b7241;
+    font-size: 14px;
+    margin: 0;
+}
+
+.auth-card {
+    width: 100%;
+    padding: 28px 22px;
+
+    background: #ffffff;
+    border-radius: 26px;
+
+    box-shadow: 0 8px 24px rgba(48, 69, 44, 0.08);
+
+    box-sizing: border-box;
+}
+
+.auth-card h2 {
+    color: #30452c;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 8px;
+}
+
+.auth-subtitle {
+    color: #7b896e;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.auth-input-group label {
+    color: #30452c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.auth-input-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dce6cc;
+    border-radius: 12px;
+
+    background: #f9fbf4;
+    color: #30452c;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-input-group input:focus {
+    border-color: #80c124;
+    box-shadow: 0 0 0 3px rgba(128, 193, 36, 0.12);
+}
+
+.auth-submit {
+    width: 100%;
+    height: 48px;
+
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #80c124;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-submit:hover {
+    background: #5b7241;
+}
+
+.auth-switch {
+    text-align: center;
+    color: #7b896e;
+    font-size: 13px;
+    margin: 20px 0 0;
+}
+
+.auth-switch button {
+    border: none;
+    background: none;
+    color: #538114;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Tampilan HP */
+@media screen and (max-width: 480px) {
+    .auth-page {
+        padding: 20px 16px;
+    }
+
+    .auth-logo h1 {
+        font-size: 28px;
+    }
+
+    .auth-card {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+
+    .auth-card h2 {
+        font-size: 22px;
+    }
+}
+/* =====================================
+   AUTH PAGE: SEMBUNYIKAN DASHBOARD
+===================================== */
+
+body.auth-mode .dashboard-header,
+body.auth-mode .bottom-nav,
+body.auth-mode .navbar,
+body.auth-mode .header {
+    display: none !important;
+}
+
+/* Halaman login dan daftar memenuhi layar */
+body.auth-mode .auth-page {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hindari konten login tertutup navbar */
+body.auth-mode {
+    overflow-x: hidden;
+}
+/* ==========================================
+   AUTH PAGE - LOGIN DAN DAFTAR TERPISAH
+========================================== */
+
+/* Sembunyikan header dan navbar dashboard saat auth */
+body.auth-mode .top-header,
+body.auth-mode .bottom-nav {
+    display: none !important;
+}
+
+/* Sembunyikan semua halaman saat belum login */
+body.auth-mode .page {
+    display: none !important;
+}
+
+/* Tampilkan hanya halaman auth yang aktif */
+body.auth-mode #loginPage.active,
+body.auth-mode #registerPage.active {
+    display: flex !important;
+}
+
+/* Halaman login dan daftar */
+body.auth-mode .auth-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 16px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg);
+    box-sizing: border-box;
+}
+
+/* Container form */
+body.auth-mode .auth-container {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+}
+
+/* Hilangkan padding bawah dashboard */
+body.auth-mode .app {
+    padding-bottom: 0;
+    min-height: 100vh;
+}
+
+/* Pastikan halaman yang tidak aktif tidak muncul */
+body.auth-mode #loginPage:not(.active),
+body.auth-mode #registerPage:not(.active) {
+    display: none !important;
+}
+
+/* =====================================
+   LOGIN DAN DAFTAR TERPISAH
+===================================== */
+
+body.auth-mode .page {
+    display: none !important;
+}
+
+body.auth-mode .page.active {
+    display: flex !important;
+}
+
+/* Hanya halaman auth yang sedang aktif */
+body.auth-mode #loginPage,
+body.auth-mode #registerPage {
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pastikan halaman yang tidak aktif tidak terlihat */
+body.auth-mode #loginPage:not(.active),
+body.auth-mode #registerPage:not(.active) {
+    display: none !important;
+}
+/* =====================================
+   INISIAL PENGGUNA - LOGO DOOMBREAK
+===================================== */
+
+#profileAvatar,
+#userInitial {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #f5db24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+    text-align: center;
+}
+/* Membuat SocialBreak berada di tengah */
+.feature-button.social {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
+}
+/* ======================================
+   RIWAYAT BREAKMIND, BREAKSOUL, SOCIALBREAK
+====================================== */
+
+/* Header halaman riwayat */
+#featureHistoryPage .simple-page-header,
+#featureHistoryDetailPage .simple-page-header {
+    background: var(--header);
+    border-top: 3px solid #a4b987;
+    border-bottom: 3px solid #a4b987;
+    padding: 25px;
+    min-height: 150px;
+}
+
+/* Judul fitur */
+#featureHistoryPage .history-page-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#featureHistoryPage .history-page-heading span {
+    font-size: 42px;
+}
+
+#featureHistoryPage .history-page-heading h2,
+#featureHistoryDetailPage .simple-page-header h2 {
+    font-size: clamp(25px, 5vw, 42px);
+    font-weight: 900;
+    color: white;
+    -webkit-text-stroke: 1px var(--dark);
+    text-shadow: 2px 3px var(--dark);
+}
+
+/* Tanggal di header */
+#featureHistoryDetailPage #featureDetailDate {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+/* Daftar tanggal */
+.feature-history-list {
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Tombol tanggal */
+.feature-history-list .morning-date-button {
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 22px;
+    background: var(--green);
+    color: var(--dark);
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(18px, 4vw, 30px);
+    font-weight: 900;
+    text-align: center;
+}
+
+/* Panah tanggal */
+.feature-history-list .history-arrow {
+    display: none;
+}
+
+/* Area detail pertanyaan dan jawaban */
+.feature-history-detail {
+    padding: 35px 25px 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Kotak pertanyaan dan jawaban */
+.feature-history-detail .history-qa-card {
+    border: none;
+    border-radius: 22px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Label pertanyaan */
+.feature-history-detail .history-question {
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 22px;
+    background: var(--green);
+    box-shadow: var(--shadow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Nomor pertanyaan */
+.feature-history-detail .history-number {
+    display: none;
+}
+
+/* Teks pertanyaan */
+.feature-history-detail .history-question small {
+    display: none;
+}
+
+.feature-history-detail .history-question strong {
+    color: white;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+    text-shadow: 2px 2px var(--dark);
+}
+
+/* Area jawaban */
+.feature-history-detail .history-answer {
+    min-height: 180px;
+    margin: 15px 0 0;
+    padding: 25px;
+    border-radius: 22px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+/* Label jawaban */
+.feature-history-detail .history-answer small {
+    color: #c5c9c0;
+    font-size: clamp(20px, 4vw, 30px);
+    font-weight: 900;
+}
+
+/* Isi jawaban */
+.feature-history-detail .history-answer p {
+    color: var(--dark);
+    font-size: 18px;
+}
+
+/* Pesan jika belum ada riwayat */
+.feature-history-list .history-empty,
+.feature-history-detail .history-empty {
+    background: transparent;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 800;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 550px) {
+    .feature-history-list {
+        padding: 30px 18px;
+        gap: 22px;
+    }
+
+    .feature-history-list .morning-date-button {
+        min-height: 85px;
+        font-size: 20px;
+    }
+
+    .feature-history-detail {
+        padding: 30px 18px 110px;
+    }
+
+    .feature-history-detail .history-answer {
+        min-height: 250px;
+    }
+}

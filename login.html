@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DoomBreak</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-mode">
+
+    <main class="auth-page active">
+        <div class="auth-container">
+
+            <div class="auth-logo">
+                <h1>DoomBreak</h1>
+                <p>Take a break, take care of yourself 🌱</p>
+            </div>
+
+            <div class="auth-card">
+                <h2>Selamat Datang!</h2>
+
+                <p class="auth-subtitle">
+                    Masuk untuk melihat rekap aktivitasmu.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="auth-input-group">
+                        <label for="loginEmail">Email</label>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Masukkan email"
+                            required
+                        >
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="loginPassword">Password</label>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Masukkan password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="auth-submit">
+                        Masuk
+                    </button>
+
+                </form>
+
+                <p class="auth-switch">
+                    Belum punya akun?
+                    <a href="register.html">Daftar</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

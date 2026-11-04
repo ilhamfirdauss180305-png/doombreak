@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoomBreak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="top-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="brand-title" id="brandTitle">DoomBreak</div>
+                    <div class="header-greeting">
+                        <h2>Halo, <span id="greetingName">Pengguna</span></h2>
+                        <p>Mari ambil jeda hari ini 🌱</p>
+                    </div>
+                </div>
+
+                <div class="shield-logo">
+                    <div class="shield-leaf">🌿</div>
+                    <span id="userInitial">D</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- BERANDA -->
+        <main id="homePage" class="page active">
+
+            <!-- DASHBOARD SLIDER -->
+            <section class="dashboard-section">
+                <div class="dashboard-slider" id="dashboardSlider">
+                    <div class="dashboard-track" id="dashboardTrack">
+
+                        <!-- SLIDE 1 -->
+                        <div class="dashboard-slide">
+                            <div class="dashboard-panel screen-panel">
+                                <h3>Waktu Layar Hari Ini</h3>
+
+                                <div class="screen-time-content">
+                                    <div class="screen-time-ring">
+                                        <div class="ring-inner"></div>
+                                    </div>
+
+                                    <div class="screen-time-number">
+                                        <strong id="screenTimeValue">1j 15m</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="dashboard-slide">
+                            <div class="dashboard-panel">
+                                <div class="chart-title">
+                                    <h3>Durasi Penggunaan</h3>
+                                </div>
+
+                                <div class="app-usage-chart">
+                                    <div class="chart-y-axis">
+                                        <span>12</span>
+                                        <span>10</span>
+                                        <span>8</span>
+                                        <span>6</span>
+                                        <span>4</span>
+                                        <span>2</span>
+                                        <span>0</span>
+                                    </div>
+
+                                    <div class="chart-bars" id="usageChart">
+                                        <!-- Diisi JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-dots">
+                    <button class="slider-dot active" data-slide="0"></button>
+                    <button class="slider-dot" data-slide="1"></button>
+                    <button class="slider-dot" data-slide="2"></button>
+                </div>
+            </section>
+
+            <!-- FITUR UTAMA -->
+            <section class="feature-area">
+                <div class="feature-grid">
+
+                    <button class="feature-button mind" onclick="openChallenge('BreakMind')">
+                        <span class="feature-image">🧠</span>
+                        <span>BreakMind</span>
+                    </button>
+
+                    <button class="feature-button soul" onclick="openChallenge('BreakSoul')">
+                        <span class="feature-image">🤲</span>
+                        <span>BreakSoul</span>
+                    </button>
+
+                    <button class="feature-button social" onclick="openChallenge('SocialBreak')">
+                        <span class="feature-image">👥</span>
+                        <span>SocialBreak</span>
+                    </button>
+
+                </div>
+
+                <!-- APLIKASI TERKUNCI -->
+                <div class="locked-apps">
+                    <h3>Aplikasi Terkunci</h3>
+
+                    <div class="locked-app-icons" id="lockedAppIcons">
+                        <!-- Diisi JS -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- HALAMAN MORNINGBREAK: DAFTAR TANGGAL -->
+        <main id="morningPage" class="page">
+            <div class="page-header morning-page-header">
+                <div class="page-header-icon">🌅</div>
+                <div>
+                    <h1>MorningBreak</h1>
+                    <p id="morningCurrentDate"></p>
+                </div>
+                <div class="header-shield">Ⅱ</div>
+            </div>
+
+            <section class="morning-history">
+                <div class="morning-history-list" id="morningHistoryList">
+                    <!-- Tanggal diisi JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- HALAMAN DETAIL RIWAYAT MORNINGBREAK -->
+        <main id="morningDetailPage" class="page">
+            <div class="page-header morning-page-header">
+                <div class="page-header-icon">🌅</div>
+                <div>
+                    <h1>MorningBreak</h1>
+                    <p id="morningDetailDate"></p>
+                </div>
+                <div class="header-shield">Ⅱ</div>
+            </div>
+
+            <section class="morning-detail-content">
+                <div class="detail-section">
+                    <div class="detail-section-title">Pertanyaan</div>
+                    <div class="detail-result" id="morningQuestionsResult">
+                        <!-- Pertanyaan -->
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-section-title">Jawaban</div>
+                    <div class="detail-answer-result" id="morningAnswersResult">
+                        <!-- Jawaban -->
+                    </div>
+                </div>
+
+                <div class="detail-navigation">
+                    <button class="round-arrow" onclick="showPage('morningPage')">
+                        ←
+                    </button>
+
+                    <button class="round-arrow" onclick="openMorningBreak()">
+                        →
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- HALAMAN TANTANGAN LAIN -->
+        <main id="challengePage" class="page">
+            <div class="simple-page-header">
+                <button class="back-button" onclick="showPage('homePage')">
+                    ← Kembali
+                </button>
+
+                <h2 id="challengeTitle">BreakMind</h2>
+                <p id="challengeDescription"></p>
+            </div>
+
+            <section class="challenge-card">
+                <div class="challenge-progress">
+                    <span id="challengeCounter">Pertanyaan 1</span>
+                    <div class="progress-track">
+                        <div id="challengeProgress"></div>
+                    </div>
+                </div>
+
+                <h3 id="challengeQuestion"></h3>
+                <div id="challengeOptions" class="challenge-options"></div>
+
+                <button class="main-button" id="challengeNextButton" onclick="nextChallenge()">
+                    Lanjutkan
+                </button>
+            </section>
+        </main>
+<!-- HALAMAN ARSIP FITUR -->
+<main id="featureHistoryPage" class="page">
+    <div class="simple-page-header">
+        <button class="back-button" onclick="showPage('homePage')">
+            ← Kembali
+        </button>
+
+        <div class="history-page-heading">
+            <span id="featureHistoryIcon">🌱</span>
+            <h2 id="featureHistoryTitle">Riwayat Respons</h2>
+        </div>
+
+        <p>Pilih tanggal untuk melihat respons yang sudah dikerjakan.</p>
+    </div>
+
+    <section class="feature-history-list" id="featureHistoryList">
+        <!-- Tanggal akan diisi melalui JavaScript -->
+    </section>
+</main>
+
+<!-- HALAMAN DETAIL ARSIP -->
+<main id="featureHistoryDetailPage" class="page">
+    <div class="simple-page-header">
+        <button
+            class="back-button"
+            onclick="showPage('featureHistoryPage')"
+        >
+            ← Kembali
+        </button>
+
+        <h2 id="featureDetailTitle">Detail Respons</h2>
+        <p id="featureDetailDate"></p>
+    </div>
+
+    <section
+        class="feature-history-detail"
+        id="featureHistoryDetailContent"
+    >
+        <!-- Pertanyaan dan jawaban akan ditampilkan di sini -->
+    </section>
+</main>
+
+        <!-- PROFILE -->
+        <main id="profilePage" class="page">
+            <div class="simple-page-header">
+                <h2>Profil</h2>
+                <p>Kelola informasi akunmu.</p>
+            </div>
+
+            <section class="settings-content">
+                <div class="profile-avatar" id="profileAvatar">H</div>
+
+                <label for="profileName">Nama</label>
+                <input id="profileName" type="text" value="Hida">
+
+                <label for="profileEmail">Email</label>
+                <input id="profileEmail" type="email" placeholder="Email kamu">
+
+                <button class="main-button" onclick="saveProfile()">
+                    Simpan Profil
+                </button>
+
+                <p id="profileFeedback" class="feedback"></p>
+            </section>
+        </main>
+
+        <!-- SETTINGS -->
+        <main id="settingsPage" class="page">
+            <div class="page-header settings-page-header">
+                <div class="page-header-icon">⚙</div>
+                <h1>Setting</h1>
+            </div>
+
+            <section class="settings-content">
+
+                <h2 class="settings-section-title">
+                    Pengaturan Waktu & Fokus
+                </h2>
+
+                <div class="daily-limit-row">
+                    <label for="dailyLimit">Batas Layar Harian</label>
+                    <select id="dailyLimit">
+                        <option value="2">2 jam</option>
+                        <option value="3">3 jam</option>
+                        <option value="4">4 jam</option>
+                        <option value="5">5 jam</option>
+                        <option value="6">6 jam</option>
+                        <option value="8">8 jam</option>
+                    </select>
+                </div>
+
+                <h2 class="settings-section-title app-lock-title">
+                    Nonaktifkan Aplikasi
+                </h2>
+
+                <div class="app-lock-list">
+
+                    <label class="app-lock-row">
+                        <span class="app-logo instagram">◎</span>
+                        <span class="app-lock-name">Instagram</span>
+                        <input type="checkbox" class="app-lock-checkbox" data-app="instagram" checked>
+                        <span class="custom-arrow">▼</span>
+                    </label>
+
+                    <label class="app-lock-row">
+                        <span class="app-logo youtube">▶</span>
+                        <span class="app-lock-name">YouTube</span>
+                        <input type="checkbox" class="app-lock-checkbox" data-app="youtube" checked>
+                        <span class="custom-arrow">▼</span>
+                    </label>
+
+                    <label class="app-lock-row">
+                        <span class="app-logo tiktok">♪</span>
+                        <span class="app-lock-name">TikTok</span>
+                        <input type="checkbox" class="app-lock-checkbox" data-app="tiktok" checked>
+                        <span class="custom-arrow">▼</span>
+                    </label>
+
+                    <label class="app-lock-row">
+                        <span class="app-logo x-logo">𝕏</span>
+                        <span class="app-lock-name">X</span>
+                        <input type="checkbox" class="app-lock-checkbox" data-app="x" checked>
+                        <span class="custom-arrow">▼</span>
+                    </label>
+
+                    <label class="app-lock-row">
+                        <span class="app-logo telegram">➤</span>
+                        <span class="app-lock-name">Telegram</span>
+                        <input type="checkbox" class="app-lock-checkbox" data-app="telegram" checked>
+                        <span class="custom-arrow">▼</span>
+                    </label>
+
+                </div>
+
+                <div class="setting-option">
+                    <strong>Tampilan Mode</strong>
+                    <button id="themeToggle" onclick="toggleTheme()">
+                        <span>☾</span>
+                        <span>☀</span>
+                    </button>
+                </div>
+
+                <div class="setting-option">
+                    <strong>Bahasa</strong>
+                    <span>Indonesia</span>
+                </div>
+                    
+                </p>
+            </section>
+        </main>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+            <button class="nav-button active" data-page="homePage" onclick="showPage('homePage')">
+                <span class="nav-icon">⌂</span>
+                <span>Beranda</span>
+            </button>
+
+            <button class="nav-button" data-page="profilePage" onclick="showPage('profilePage')">
+                <span class="nav-icon">●</span>
+                <span>Profil</span>
+            </button>
+
+            <button class="nav-button" data-page="settingsPage" onclick="showPage('settingsPage')">
+                <span class="nav-icon">⚙</span>
+                <span>Pengaturan</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

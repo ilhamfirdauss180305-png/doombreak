@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DoomBreak</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-mode">
+
+    <main class="auth-page active">
+        <div class="auth-container">
+
+            <div class="auth-logo">
+                <h1>DoomBreak</h1>
+                <p>Mulai perjalanan jeda harimu 🌱</p>
+            </div>
+
+            <div class="auth-card">
+                <h2>Buat Akun</h2>
+
+                <p class="auth-subtitle">
+                    Daftar untuk mulai menggunakan DoomBreak.
+                </p>
+
+                <form id="registerForm">
+
+                    <div class="auth-input-group">
+                        <label for="registerName">Nama</label>
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Nama lengkap"
+                            required
+                        >
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="registerEmail">Email</label>
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Email aktif"
+                            required
+                        >
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="registerPassword">Password</label>
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Minimal 6 karakter"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="confirmPassword">
+                            Konfirmasi Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Ulangi password"
+                            minlength="6"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="auth-submit">
+                        Daftar
+                    </button>
+
+                </form>
+
+                <p class="auth-switch">
+                    Sudah punya akun?
+                    <a href="login.html">Masuk</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>
